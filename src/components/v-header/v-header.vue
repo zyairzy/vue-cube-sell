@@ -101,6 +101,9 @@ export default {
         margin-right : 5px
       .bulletin-text
         flex : 1
+        text-overflow : ellipsis
+        white-space : nowrap
+        overflow : hidden
     .background
       position : absolute
       top: 0
