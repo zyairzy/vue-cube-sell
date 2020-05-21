@@ -7,23 +7,23 @@
       <div class="content">
         <div class="title">
           <img class="brand" src="./brand@2x.png">
-          <span class="name">回龙观</span>
+          <span class="name">{{seller.name}}</span>
         </div>
         <div class="description">
-          分钟送达
+          {{seller.description}}-{{seller.deliveryTime}}分钟送达
         </div>
         <div v-if="seller.supports" class="support">
-          <span class="text">满50减10</span>
+          <span class="text">{{seller.supports[0].description}}</span>
         </div>
       </div>
       <div v-if="seller.supports" class="support-count">
-        <span class="count">3333个</span>
+        <span class="count">{{seller.supports.length}}个</span>
         <i class="icon-keyboard_arrow_right"></i>
       </div>
     </div>
     <div class="bulletin-wrapper">
       <img class="bulletin-title" src="./bulletin@2x.png">
-      <span class="bulletin-text">公告信息</span>
+      <span class="bulletin-text">{{seller.bulletin}}</span>
       <i class="icon-keyboard_arrow_right"></i>
     </div>
     <div class="background">
@@ -35,12 +35,9 @@
 <script>
 export default {
   name: 'v-header',
-  data () {
-    return {
-      seller: {
-        avatar: '',
-        supports: true
-      }
+  props: {
+    seller: {
+      type: Object
     }
   }
 }
@@ -51,8 +48,9 @@ export default {
   @import "~common/stylus/variable"
 
   .header
+    position : relative
     color : #ffffff
-    background-color : green
+    background: $color-background-ss
     .content-wrapper
       display : flex
       align-items: center
@@ -110,4 +108,5 @@ export default {
       width: 100%
       height: 100%
       z-index : -1
+      filter : blur(10px)
 </style>

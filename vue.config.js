@@ -19,6 +19,9 @@ module.exports = {
       theme: false
     }
   },
+  devServer: {
+    before: require('./mock/index')
+  },
   chainWebpack (config) {
     config.resolve.alias
       .set('components', resolve('src/components'))
