@@ -83,21 +83,26 @@ export default {
         position : absolute
         right : 10px
         bottom : 10px
-        background-color : blue
+        background-color : grey
         height : 24px
         line-height : 24px
         padding : 1px 8px
         border-radius : 14px
+        display : flex
+        align-items : center
     .bulletin-wrapper
       height : 26px
       line-height : 26px
       display : flex
       align-items : center
       font-size: $fontsize-small
+      background-color : grey
+      margin-right : 5px
       .bulletin-title
-        width : 20px
-        height : 10px
-        flex : 0 0 20px
+        width : 24px
+        height : 14px
+        flex : 0 0 24px
+        margin-left : 5px
         margin-right : 5px
       .bulletin-text
         flex : 1
